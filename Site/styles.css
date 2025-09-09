@@ -1,0 +1,367 @@
+/*
+ * Design Moderno e Fluido com Tema HQ para o Setembro Amarelo
+ * Paleta de cores, tipografia e animações
+ */
+
+/* Paleta de Cores e Fontes */
+:root {
+    --hq-yellow: #FFC107;         /* Amarelo mais forte para HQ */
+    --hq-blue: #007BFF;           /* Azul para contrastar */
+    --hq-red: #DC3545;            /* Vermelho para destaque */
+    --hq-green: #28A745;          /* Verde para destaque */
+    --hq-purple: #6F42C1;         /* Roxo para destaque */
+    --hq-dark: #212529;           /* Cinza muito escuro para texto/bordas */
+    --hq-light-bg: #F8F9FA;       /* Fundo quase branco */
+    --hq-panel-bg: #FFFFFF;       /* Fundo dos cards */
+    --hq-border: 4px solid var(--hq-dark); /* Borda padrão de HQ */
+    --hq-shadow: 8px 8px 0px rgba(0, 0, 0, 0.7); /* Sombra estilo HQ */
+    --hq-text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.3); /* Sombra para títulos HQ */
+}
+
+/* Importação de Fontes do Google e específicas para HQ */
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Press+Start+2P&family=Lato:wght@400;700&display=swap');
+/* Bangers para títulos de HQ, Press Start 2P para onomatopeias, Lato para texto normal */
+
+/* Base Geral */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.7;
+    color: var(--hq-dark);
+    background-color: var(--hq-light-bg);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Links e Botões */
+a {
+    text-decoration: none;
+    color: var(--hq-dark);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--hq-yellow);
+}
+
+.button {
+    display: inline-block;
+    padding: 0.8rem 1.8rem; /* Ajustado para cards */
+    border-radius: 5px; /* Bordas mais quadradas para HQ */
+    font-weight: 700;
+    font-size: 1rem; /* Ajustado */
+    transition: all 0.3s ease-out;
+    background-color: var(--hq-yellow);
+    color: var(--hq-dark);
+    border: var(--hq-border);
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.7); /* Sombra menor para botões */
+    text-transform: uppercase;
+}
+
+.button:hover {
+    transform: translateY(-3px) translateX(-3px); /* Movimento diagonal */
+    box-shadow: 7px 7px 0px rgba(0, 0, 0, 0.7);
+    background-color: var(--hq-dark);
+    color: var(--hq-yellow);
+}
+
+/* Cabeçalho e Navegação */
+.main-header {
+    background-color: var(--hq-yellow);
+    padding: 1rem 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: var(--hq-border);
+}
+
+.main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem; /* Menor gap para caber mais itens */
+    flex-wrap: wrap; /* Para quebrar linha em telas menores */
+}
+
+.nav-item {
+    font-family: 'Bangers', cursive; /* Fonte de HQ para o menu */
+    font-weight: normal; /* Bangers já tem peso */
+    font-size: 1.3rem;
+    color: var(--hq-dark);
+    position: relative;
+    padding: 0.5rem 0.8rem;
+    letter-spacing: 1px;
+    text-shadow: var(--hq-text-shadow);
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 3px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--hq-dark);
+    transform-origin: bottom right;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.nav-item:hover::after, .nav-item.active::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+.nav-item:hover, .nav-item.active {
+    color: var(--hq-dark);
+}
+
+
+/* MAIN para HQ */
+.hq-main {
+    background-image: url('https://www.transparenttextures.com/patterns/lined-paper.png'); /* Fundo de papel para HQ */
+    background-repeat: repeat;
+    padding-bottom: 5rem; /* Mais padding no final */
+}
+
+
+/* Seções e Títulos */
+.section {
+    padding: 4rem 1.5rem; /* Ajustado */
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hq-title {
+    font-family: 'Bangers', cursive;
+    font-size: 4.5rem; /* Título maior e impactante */
+    margin-bottom: 2rem;
+    color: var(--hq-red); /* Cor de destaque para título */
+    position: relative;
+    padding-bottom: 1rem;
+    text-shadow: 4px 4px 0px var(--hq-blue), 6px 6px 0px var(--hq-dark); /* Sombra dupla */
+    letter-spacing: 2px;
+}
+
+.hq-title::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px; /* Linha mais longa */
+    height: 8px; /* Mais grossa */
+    background: linear-gradient(90deg, var(--hq-blue), var(--hq-yellow));
+    border-radius: 8px;
+    border: 2px solid var(--hq-dark);
+}
+
+.hq-intro {
+    max-width: 800px;
+    margin: 0 auto 4rem; /* Mais espaçamento */
+    font-size: 1.2rem;
+    font-family: 'Lato', sans-serif;
+    color: var(--hq-dark);
+    line-height: 1.6;
+    background-color: var(--hq-panel-bg);
+    padding: 1.5rem;
+    border: var(--hq-border);
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    position: relative;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.8);
+}
+
+/* Balão de Fala para a introdução */
+.hq-intro::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid var(--hq-border); /* Cor da borda do balão */
+    position: absolute;
+    bottom: -24px; /* Ajuste a posição da "cauda" */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+.hq-intro::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid var(--hq-panel-bg); /* Cor de fundo do balão */
+    position: absolute;
+    bottom: -20px; /* Ajuste para ficar sobre a borda */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+
+/* Cards de Palestra estilo HQ */
+.hq-grid .col {
+    padding: 0.5rem; /* Ajusta o padding do Bootstrap para um visual mais "grid" */
+}
+
+.hq-card {
+    background-color: var(--hq-panel-bg);
+    border: var(--hq-border);
+    border-radius: 10px; /* Bordas dos cards */
+    box-shadow: var(--hq-shadow);
+    padding: 1.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden; /* Para onomatopeias */
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.hq-card:hover {
+    transform: translateY(-8px) translateX(-8px) scale(1.03); /* Movimento mais dramático */
+    box-shadow: 12px 12px 0px rgba(0, 0, 0, 0.7);
+}
+
+.hq-card-title {
+    font-family: 'Bangers', cursive;
+    font-size: 2rem;
+    color: var(--hq-blue);
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+}
+
+.hq-card .card-text {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    color: var(--hq-dark);
+}
+
+.hq-card .hq-button {
+    margin-top: auto; /* Empurra o botão para baixo */
+}
+
+/* Onomatopeias */
+.hq-onomatopoeia {
+    font-family: 'Press Start 2P', cursive;
+    position: absolute;
+    opacity: 0.8;
+    font-size: 1.8rem; /* Tamanho base */
+    color: var(--hq-red);
+    text-shadow: 3px 3px 0px var(--hq-dark);
+    animation: bounceIn 1s ease-out forwards;
+    pointer-events: none; /* Garante que não interfira com cliques */
+    user-select: none;
+    z-index: 5;
+}
+
+/* Posições aleatórias e cores para onomatopeias */
+.hq-onomatopoeia.type-pop { top: 5%; right: 5%; color: var(--hq-green); transform: rotate(10deg); }
+.hq-onomatopoeia.type-wham { bottom: 10%; left: 8%; color: var(--hq-blue); transform: rotate(-8deg); }
+.hq-onomatopoeia.type-bam { top: 15%; left: 10%; color: var(--hq-purple); transform: rotate(-15deg); }
+.hq-onomatopoeia.type-pow { bottom: 5%; right: 15%; color: var(--hq-yellow); transform: rotate(5deg); }
+.hq-onomatopoeia.type-zap { top: 10%; right: 12%; color: var(--hq-red); transform: rotate(20deg); }
+.hq-onomatopoeia.type-boom { bottom: 15%; right: 8%; color: var(--hq-blue); transform: rotate(-10deg); }
+.hq-onomatopoeia.type-smash { top: 8%; left: 5%; color: var(--hq-green); transform: rotate(12deg); }
+.hq-onomatopoeia.type-kapow { bottom: 8%; left: 15%; color: var(--hq-red); transform: rotate(-20deg); }
+.hq-onomatopoeia.type-zing { top: 20%; right: 10%; color: var(--hq-purple); transform: rotate(8deg); }
+
+
+/* Animações e Scroll Reveal (Mantidas e adaptadas) */
+.animated {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animated.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.5) translateY(-50px); opacity: 0; }
+    50% { transform: scale(1.2) translateY(10px); opacity: 1; }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+/* Footer (Mantido o estilo moderno) */
+.main-footer {
+    background-color: var(--hq-dark);
+    color: var(--hq-light-bg);
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    margin-top: auto;
+    font-size: 0.95rem;
+    border-top: var(--hq-border);
+}
+
+.social-links {
+    margin-bottom: 1.5rem;
+}
+
+.social-links a {
+    color: var(--hq-light-bg);
+    font-size: 1.8rem;
+    margin: 0 1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--hq-yellow);
+    transform: translateY(-5px);
+}
+
+
+/* Responsividade */
+@media (max-width: 767px) {
+    .main-nav {
+        justify-content: space-around;
+        gap: 0.5rem;
+    }
+    .nav-item {
+        font-size: 1rem;
+        padding: 0.3rem 0.5rem;
+    }
+    .hq-title {
+        font-size: 3rem;
+        text-shadow: 3px 3px 0px var(--hq-blue), 4px 4px 0px var(--hq-dark);
+    }
+    .hq-intro {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+    .hq-onomatopoeia {
+        font-size: 1.2rem; /* Menor em mobile */
+        text-shadow: 2px 2px 0px var(--hq-dark);
+    }
+    .hq-card-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .section {
+        padding: 6rem 3rem;
+    }
+    .hq-title {
+        font-size: 5.5rem;
+    }
+    .main-header {
+        padding: 1.5rem 4rem;
+    }
+}

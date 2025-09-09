@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Setembro Amarelo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="main-nav">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="tecnologia.html" class="nav-item">Tecnologia</a>
+            <a href="canais.html" class="nav-item">Apoio</a>
+            <a href="palestras.html" class="nav-item">Palestras</a>
+            <a href="parceiros.html" class="nav-item">Parceiros</a>
+            <a href="cadastro.html" class="nav-item active">Cadastro</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section">
+            <h2>Faça Parte da Nossa Comunidade</h2>
+            <p style="max-width: 600px; margin: 0 auto 3rem; font-size: 1.1rem;">Junte-se a nós nesta jornada de conscientização e apoio. Seus dados estarão seguros conosco e serão usados apenas para comunicarmos sobre eventos e novidades.</p>
+
+            <div class="form-container grid-item">
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone" name="telefone">
+                    </div>
+                    <div class="form-group">
+                        <label for="senha">Senha</label>
+                        <input type="password" id="senha" name="senha" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmar-senha">Confirmar Senha</label>
+                        <input type="password" id="confirmar-senha" name="confirmar-senha" required>
+                    </div>
+                    <div class="form-group form-checkbox">
+                        <input type="checkbox" id="termos" name="termos" required>
+                        <label for="termos">Eu concordo com os termos de serviço.</label>
+                    </div>
+                    <button type="submit" class="button">Cadastrar</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>&copy; 2025 Setembro Amarelo. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
